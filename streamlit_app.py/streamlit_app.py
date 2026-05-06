@@ -19,7 +19,8 @@ user_prompt = st.text_input("ඔබට අවශ්‍ය දේ මෙහි �
 if st.button("Generate"):
     if user_prompt:
         try:
-            model = genai.GenerativeModel('gemini-pro')
+            # නවතම gemini-1.5-flash මොඩලය භාවිතා කර ඇත
+            model = genai.GenerativeModel('gemini-1.5-flash')
             response = model.generate_content(user_prompt)
             st.success("ඔබේ නිර්මාණය මෙන්න:")
             st.write(response.text)
